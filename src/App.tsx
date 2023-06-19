@@ -1,4 +1,7 @@
-import "./App.css";
+import "./App.scss";
+import { accesKeyAxiosInterceptor } from "./core/infrastructure/interceptors/axios.interceptor";
+
+accesKeyAxiosInterceptor();
 
 function App() {
   return (
