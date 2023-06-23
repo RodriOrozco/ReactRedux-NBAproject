@@ -1,4 +1,5 @@
 import "./App.scss";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Navigate, Route } from "react-router-dom";
 
 import { privateRoutes, publicRoutes } from "./core/models";
@@ -7,9 +8,11 @@ import { accesKeyAxiosInterceptor } from "./core/infrastructure/interceptors/axi
 import AuthGuard from "./guards/auth.guards";
 import RoutesWithNotFound from "./utils/routes-with-not-found";
 
-import Private from "./pages/Private/Private";
-import LandingPage from "./pages/Public/LandingPage/LandingPage";
-import { Suspense } from "react";
+// this is used to upload the components with lazy loading
+const Private = lazy(() => import("./pages/Private/Private"));
+const LandingPage = lazy(
+  () => import("./pages/Public/LandingPage/LandingPage")
+);
 
 accesKeyAxiosInterceptor();
 
