@@ -1,19 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { EmptyUser } from "../../../core/models";
+import {
+  clearLocalStorage,
+  persistLocalStorage,
+} from "../../../utils/local-storage.utils";
+import { User } from "../../../core/interfaces";
+
+export const userKey = "userKey";
 
 export const slice = createSlice({
   name: "user",
-  initialState: EmptyUser,
+  initialState: localStorage.getItem(userKey)
+    ? JSON.parse(localStorage.getItem(userKey) as string)
+    : EmptyUser,
   reducers: {
     loginUser: (state, action) => {
+      persistLocalStorage<User>(userKey, action.payload);
       return action.payload;
     },
     updateUser: (state, action) => {
-      return { ...state, ...action.payload };
+      const result = { ...state, ...action.payload };
+      persistLocalStorage<User>(userKey, result);
+      return result;
     },
     logoutUser: (state, action) => {
-      state = EmptyUser;
-      return state;
+      clearLocalStorage(userKey);
+      return EmptyUser;
     },
   },
 });

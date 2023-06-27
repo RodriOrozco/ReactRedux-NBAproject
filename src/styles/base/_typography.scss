@@ -19,7 +19,7 @@ body {
   &-main {
     /*Events categories title*/
     font-family: inherit;
-    font-size: $heading-size-16;
+    font-size: $heading-size-28;
     font-weight: 600;
     &--upper {
       text-transform: uppercase;
@@ -38,11 +38,11 @@ body {
 .heading-tertiary {
   /*h3*/
   color: $color-white;
-  font-family: "Acumin Pro Wide", sans-serif;
+  font-family: $font-h3;
   &-main {
     /*Drinks name*/
     font-family: inherit;
-    font-size: $text-size-14;
+    font-size: $heading-size-24;
     font-weight: 600;
     &--upper {
       text-transform: uppercase;
@@ -51,10 +51,16 @@ body {
 
   &-sub {
     /*Drinks price*/
-    font-size: $heading-size-16;
+    font-size: $heading-size-18;
     font-weight: 600;
     &--upper {
       text-transform: uppercase;
     }
   }
+}
+
+.text-alternative {
+  color: $color-white;
+  font-family: $font-alternative;
+  font-size: $text-size-16;
 }
