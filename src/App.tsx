@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./styles/main.scss";
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Navigate, Route } from "react-router-dom";
 
@@ -18,7 +18,7 @@ accesKeyAxiosInterceptor();
 
 function App() {
   return (
-    <section className="app">
+    <section className="dark app">
       {/* suspense is used to display a loader until the routes can be rendered */}
       <Suspense fallback={<p>cargando...</p>}>
         <BrowserRouter>

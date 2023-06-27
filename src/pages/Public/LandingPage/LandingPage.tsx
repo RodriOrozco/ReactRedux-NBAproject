@@ -1,10 +1,10 @@
-import React from "react";
+import "./landingPage.scss";
 
 const LandingPage = () => {
   return (
-    <div>
-      <h1>landing login</h1>
-    </div>
+    <section className="landingPage">
+      <h1 className="heading-primary">landing login</h1>
+    </section>
   );
 };
 
