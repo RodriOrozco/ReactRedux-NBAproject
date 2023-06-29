@@ -14,21 +14,22 @@ export const slice = createSlice({
     ? JSON.parse(localStorage.getItem(userKey) as string)
     : EmptyUser,
   reducers: {
-    loginUser: (state, action) => {
+    loginUserReducer: (state, action) => {
       persistLocalStorage<User>(userKey, action.payload);
       return action.payload;
     },
-    updateUser: (state, action) => {
+    updateUserReducer: (state, action) => {
       const result = { ...state, ...action.payload };
       persistLocalStorage<User>(userKey, result);
       return result;
     },
-    logoutUser: (state, action) => {
+    logoutUserReducer: (state, action) => {
       clearLocalStorage(userKey);
       return EmptyUser;
     },
   },
 });
 
-export const { loginUser, updateUser, logoutUser } = slice.actions;
+export const { loginUserReducer, updateUserReducer, logoutUserReducer } =
+  slice.actions;
 export default slice.reducer;

@@ -1,8 +1,10 @@
-import { User } from "../../interfaces";
+import { User, UserPlaceholder } from "../../interfaces";
 
-export const createUserAdapter = (user: any): User => ({
-  idUser: user.data.id,
-  nameUser: user.data.name,
-  nicknameUser: user.data.username,
-  emailUser: user.data.email,
-});
+export const createUserAdapter = (data: UserPlaceholder): User => {
+  return {
+    idUser: data.id,
+    nameUser: data.name,
+    nicknameUser: data.username,
+    emailUser: data.email,
+  };
+};

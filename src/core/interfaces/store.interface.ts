@@ -1,7 +1,7 @@
-import { User } from "./user.interfaces";
+import { UserRedux } from "./user.interfaces";
 
 interface AppStore {
-  user: User;
+  user: UserRedux;
 }
 
 export default AppStore;

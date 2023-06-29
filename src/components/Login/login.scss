@@ -1,0 +1,30 @@
+@import "../../styles/stylesImports.scss";
+
+.login {
+  width: 80%;
+  max-width: 89rem;
+  height: 80%;
+  padding: 2rem;
+  @include background-glass;
+  @include flex-config(flex, row, nowrap, space-between, space-between);
+
+  .section-left,
+  .section-right {
+    width: 50%;
+  }
+
+  .section-right {
+    position: relative;
+    &::after {
+      content: " ";
+      z-index: 1;
+      top: 0;
+      right: -3rem;
+      width: 40vw;
+      height: 45rem;
+      position: absolute;
+      border-radius: 13px;
+      background-color: rgba(255, 251, 7, 0.86);
+    }
+  }
+}

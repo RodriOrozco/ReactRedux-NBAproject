@@ -11,7 +11,10 @@ const Dashboard = lazy(() => import("./Dashboard/Dashboard"));
 const Private = () => {
   return (
     <RoutesWithNotFound>
-      <Route path="/" element={<Navigate replace to={privateRoutes.HOME} />} />
+      <Route
+        path="/"
+        element={<Navigate replace to={privateRoutes.DASHBOARD} />}
+      />
       <Route path={privateRoutes.HOME} element={<Home />} />
       <Route path={privateRoutes.DASHBOARD} element={<Dashboard />} />
     </RoutesWithNotFound>
